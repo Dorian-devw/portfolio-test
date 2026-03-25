@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dorian.exe</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: url('background-1.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.neon {
+  text-shadow: 0 0 5px #0ff, 0 0 15px #f0f;
+}
+
+.card {
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid #0ff;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px #0ff;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+}
+
+.modal.active {
+  display: flex;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('background-1.gif') center/cover no-repeat;
+  filter: blur(6px) brightness(0.3);
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: -1;
+}
+
+</style>
+</head>
+
+<body class="text-white">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full bg-black/40 backdrop-blur-md p-4 flex justify-center gap-10 z-50">
+  <a href="#home">// home</a>
+  <a href="#tech">// tech</a>
+  <a href="#work">// work</a>
+  <a href="#exp">// experience</a>
+  <a href="#contact">// contact</a>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="h-screen flex flex-col justify-center items-center text-center">
+  <h1 class="text-6xl neon">DORIAN</h1>
+  <p class="mt-5 text-cyan-400">Software Dev | Web | Game Dev</p>
+</section>
+
+<!-- TECNOLOGIAS -->
+<section id="tech" class="min-h-screen px-10 py-20">
+  <h2 class="text-4xl neon mb-10">Tecnologías</h2>
+
+  <div class="grid md:grid-cols-3 gap-6">
+
+    <div class="card p-6 flex items-center gap-3">
+      <i class="devicon-html5-plain colored text-2xl"></i> HTML
+    </div>
+
+    <div class="card p-6 flex items-center gap-3">
+      <i class="devicon-css3-plain colored text-2xl"></i> CSS
+    </div>
+
+    <div class="card p-6 flex items-center gap-3">
+      <i class="devicon-javascript-plain colored text-2xl"></i> JavaScript
+    </div>
+
+    <div class="card p-6 flex items-center gap-3">
+      <i class="devicon-nodejs-plain colored text-2xl"></i> Node.js
+    </div>
+
+    <div class="card p-6 flex items-center gap-3">
+      <i class="devicon-mongodb-plain colored text-2xl"></i> MongoDB
+    </div>
+
+    <div class="card p-6 flex items-center gap-3">
+      <i class="devicon-php-plain colored text-2xl"></i> PHP
+    </div>
+
+    <div class="card p-6 flex items-center gap-3">
+      <i class="devicon-python-plain colored text-2xl"></i> Python
+    </div>
+
+    <div class="card p-6 flex items-center gap-3">
+      <i class="devicon-firebase-plain colored text-2xl"></i> Firebase
+    </div>
+
+    <div class="card p-6 flex items-center gap-3">
+      <i class="devicon-react-original colored text-2xl"></i> React
+    </div>
+
+  </div>
+</section>
+
+<!-- WORK BENTO -->
+<section id="work" class="min-h-screen px-10 py-20">
+  <h2 class="text-4xl neon mb-10">My Work</h2>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+    <div class="card col-span-2 row-span-2 p-5" onclick="openModal('m1')">
+      <img src="imagen-1" class="w-full mb-3">
+      Sistema de Asistencia (Hikvision)
+    </div>
+
+    <div class="card p-5" onclick="openModal('m2')">
+      <img src="imagen-2" class="mb-2">
+      Web Constructora USA
+    </div>
+
+    <div class="card p-5" onclick="openModal('m3')">
+      <img src="imagen-3" class="mb-2">
+      OPEX / CAPEX
+    </div>
+
+    <div class="card col-span-2 p-5" onclick="openModal('m4')">
+      <img src="imagen-4" class="mb-2">
+      <i class="devicon-javascript-plain colored"></i>
+
+      Videojuegos Phaser
+    </div>
+
+    <div class="card p-5" onclick="openModal('m5')">
+      App Votaciones 2026
+    </div>
+
+    <div class="card p-5" onclick="openModal('m6')">
+      Lavandería Llampa Hani
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCIA -->
+<section id="exp" class="min-h-screen px-10 py-20">
+  <h2 class="text-4xl neon mb-10">Experience</h2>
+
+  <div class="space-y-5">
+
+    <div class="card p-5">
+      Desarrollo de sistema de asistencia con biometría (Hikvision)
+    </div>
+
+    <div class="card p-5">
+      Desarrollo web para empresa de construcción en USA
+    </div>
+
+    <div class="card p-5">
+      Sistema de análisis financiero (OPEX / CAPEX)
+    </div>
+
+    <div class="card p-5">
+      Desarrollo de videojuegos educativos RPG (Fabulae)
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="min-h-screen px-10 py-20 text-center">
+  <h2 class="text-4xl neon mb-10">Contact</h2>
+
+  <p class="text-cyan-400">dorian.dev@email.com</p>
+  <p class="mt-3">GitHub | LinkedIn</p>
+</section>
+
+<!-- MODALES -->
+<div id="modal" class="modal fixed inset-0 bg-black/80 justify-center items-center">
+
+  <div id="modal-content" class="card p-10 max-w-xl">
+    <h3 id="modal-title" class="text-2xl neon"></h3>
+    <p id="modal-text" class="mt-4"></p>
+    <button onclick="closeModal()" class="mt-5 text-pink-400">Cerrar</button>
+  </div>
+
+</div>
+
+<script>
+function openModal(id) {
+
+  const data = {
+    m1: ["Sistema Hikvision", "Sistema de asistencia con tarjetas y huella digital para alumnos."],
+    m2: ["Constructora USA", "Landing page profesional para empresa de construcción."],
+    m3: ["OPEX CAPEX", "Sistema de análisis financiero para Plaza Vea, Makro y Vivanda."],
+    m4: ["Videojuegos Phaser", "Simuladores y juegos educativos desarrollados en Phaser.js."],
+    m5: ["App Votaciones", "Aplicación para elecciones presidenciales Perú 2026."],
+    m6: ["Lavandería", "Frontend completo para sistema de lavandería con flujo completo."]
+  };
+
+  document.getElementById("modal-title").innerText = data[id][0];
+  document.getElementById("modal-text").innerText = data[id][1];
+
+  document.getElementById("modal").classList.add("active");
+}
+
+function closeModal() {
+  document.getElementById("modal").classList.remove("active");
+}
+</script>
+
+</body>
+</html>
